@@ -9,12 +9,13 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH_CLIENT_ID'], ENV['GOOGLE_OAUTH_CLIENT_SECRET']
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '8aca2715d1925b581f0296315fd2d397dcf41baaf582d1ecf47360e793cf4fae0e439d0607301e0b519819c93bbed73a868eddc26fcfb59622d94f23333df16f'
+  # config.secret_key = '43fbc203318b243208f2c154d949e4b2daa4c23c1337cf36575b3226d4531272832784fd928ab4644ada328770dcd692b21618b42f8e4bb0b2492a609cfd04b9'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,7 +25,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'hello@example.com'
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -126,7 +127,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'af37b734df088c61bf0b06006cfe7ef9e0a11f0c08b4622ea6d4934be7164b37111e81f972a28ae9d361db7790fbb963c5220a7e10d0ab322a3bc2e029cf527f'
+  # config.pepper = 'c4a19abac170d461395700e8b467a9d992376e4247de25b443203629eb61245ec93fd2c82d71589edfed11cf1626477a1cccddb16a8bc58fc67579056ac16770'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -244,7 +245,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  config.scoped_views = true
+  # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).

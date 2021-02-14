@@ -13,6 +13,12 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
+    <style>
+        .flash__alert   { color: red; }
+        .flash__notice  { color: blue; }
+        .flash__success { color: green; }
+    </style>
+
   </head>
 
   <body>
@@ -47,6 +53,11 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
+      <% if flash.any? %>
+      <% flash.each do |key, value| -%>
+        <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+      <% end -%>
+    <% end %>
     <%= yield %>
       </div>
     </div>

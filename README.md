@@ -1,3 +1,3 @@
-<h2>Mattygram<h2>
+<h2>Mattygram</h2>
 
 > My first rails project, an instagram clone.
