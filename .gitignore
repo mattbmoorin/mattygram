@@ -5,7 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 .env
-mattygram/config/application.yml
+config/application.yml
 
 # Ignore bundler config.
 /.bundle
