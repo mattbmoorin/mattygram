@@ -516,6 +516,7 @@ DEPENDENCIES
   dotenv-rails
   figaro
   fog
+  fog-aws
   listen (~> 3.2)
   mini_magick
   omniauth (~> 1.9.1)
