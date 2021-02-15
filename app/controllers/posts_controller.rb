@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
-
+    
     def new
         @post = Post.new
     end
 
     def create
-        @account = current_account
-        
+        #@account = current_account
+
         @post = Post.new(post_params)
         @post.account_id = current_account.id if account_signed_in?
         @post.username = current_account.username if account_signed_in?

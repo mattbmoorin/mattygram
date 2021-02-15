@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
-    belongs_to :account
     mount_uploader :image, ImageUploader
+    belongs_to :account
     
     before_create :set_active
     
