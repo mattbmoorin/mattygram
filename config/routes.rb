@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   
   resources :accounts
   resources :posts, only: [:new, :create, :show]
-  get '/dashboard' => 'accounts#index'
   
+  get '/dashboard' => 'accounts#index'
+  get '/profile/:username' => 'accounts#show'
+
   root to: 'public#index'
 end

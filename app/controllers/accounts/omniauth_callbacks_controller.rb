@@ -10,3 +10,4 @@ class Accounts::OmniauthCallbacksController < Devise::OmniauthCallbacksControlle
       redirect_to new_account_registration_url
     end
   end
+end
