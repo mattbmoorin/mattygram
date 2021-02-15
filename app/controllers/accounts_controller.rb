@@ -1,6 +1,8 @@
 class AccountsController < ApplicationController
     before_action :set_account, only: [:show]
     
+    # Ask why before_action instance variable returns nil in view
+
     def index
         # user dashboard - feed
         @posts = Post.active

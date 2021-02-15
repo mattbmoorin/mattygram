@@ -5,7 +5,17 @@ class Account < ApplicationRecord
   :recoverable, :rememberable, :validatable, 
   :omniauthable, omniauth_providers: [:google_oauth2]
   
-  has_many :posts, dependent: :destroy
+  mount_uploader :image, ImageUploader
+
+  has_many :posts
+
+  def total_followers
+    0
+  end
+
+  def total_following
+    0
+  end
   
   def self.create_from_provider_data(provider_data)
     where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do |account|
