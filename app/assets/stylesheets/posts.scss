@@ -9,6 +9,10 @@
   font-weight: bold;
   padding: 10px;
   border: 1px solid #ddd;
+
+  img {
+    margin-right: 10px;
+  }
 }
 
 .gallery {
@@ -16,4 +20,10 @@
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 5vw);
   grid-gap: 15px;
+}
+
+.post-details {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px;
 }

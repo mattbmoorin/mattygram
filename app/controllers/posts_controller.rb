@@ -5,8 +5,6 @@ class PostsController < ApplicationController
     end
 
     def create
-        #@account = current_account
-
         @post = Post.new(post_params)
         @post.account_id = current_account.id if account_signed_in?
         @post.username = current_account.username if account_signed_in?
@@ -29,6 +27,6 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:image, :image_cache)
+        params.require(:post).permit(:image, :image_cache, :description)
     end
 end

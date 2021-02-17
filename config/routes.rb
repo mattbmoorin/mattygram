@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :accounts, controllers: { omniauth_callbacks: 'accounts/omniauth_callbacks', sessions: 'sessions' }
   
-  resources :accounts
+  resources :accounts, only: [:show]
   resources :posts, only: [:new, :create, :show]
   
   get '/dashboard' => 'accounts#index'

@@ -12,6 +12,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'fog'
+gem 'image_magick'
 gem 'mini_magick'
 gem 'figaro'
 # Postgres db

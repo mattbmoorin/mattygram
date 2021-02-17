@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
     before_action :set_account, only: [:show]
     
-    # Ask why before_action instance variable returns nil in view
+    # Ask why before_action instance variable returns nil in view for oauth users
 
     def index
         # user dashboard - feed
@@ -9,7 +9,7 @@ class AccountsController < ApplicationController
     end
 
     def show
-        # user profile  
+        # user profile
     end
 
     def set_account
