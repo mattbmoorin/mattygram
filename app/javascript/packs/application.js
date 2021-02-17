@@ -5,6 +5,8 @@
 
 require("@rails/ujs").start();
 // require("turbolinks").start();
+//= require bootstrap.min
+//= require fontawesome.min
 require("@rails/activestorage").start();
 require("channels");
 import "css/site";
