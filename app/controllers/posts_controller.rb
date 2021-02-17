@@ -21,6 +21,11 @@ class PostsController < ApplicationController
     def show
     end
 
+    def resize
+        @image = MiniMagick::Image.open(@post.image.url)
+        @image.resize "25%"
+    end
+
     private
 
     def post_params
