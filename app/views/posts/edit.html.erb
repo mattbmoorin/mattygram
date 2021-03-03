@@ -1,3 +1,11 @@
 <h2>Edit Post</h2>
+<%= form_for @post do |f| %>
 
-<%= render "form" %>
+<div class="form-group">
+<%= f.label :description %>
+<%= f.text_area :description, class: "form-control" %>
+</div>
+
+<%= f.submit "Save Post", class: "btn btn-success" %>
+
+<% end %>

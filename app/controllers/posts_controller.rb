@@ -21,6 +21,13 @@ class PostsController < ApplicationController
       redirect_to dashboard_path, flash: { danger: "You do not have permission to edit this post" } if @post.account_id != current_account.id
     end
 
+    def update
+      @post = Post.find(params[:id])
+      @post.update(description: params[:description])
+      @post.save
+      redirect_to dashboard_path
+    end
+
     def show
     end
 
