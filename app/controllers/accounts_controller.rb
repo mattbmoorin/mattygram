@@ -1,7 +1,5 @@
 class AccountsController < ApplicationController
     before_action :set_account, only: [:show]
-    
-    # Ask why before_action instance variable returns nil in view for oauth users
 
     def index
         # user dashboard - feed
@@ -12,6 +10,7 @@ class AccountsController < ApplicationController
         # user profile
     end
 
+    # WHY DOES THIS ONLY WORK FOR NON OAUTH USERS?? UGH!!
     def set_account
         @account = Account.find_by_username(params[:username])
     end

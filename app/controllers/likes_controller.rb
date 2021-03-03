@@ -2,18 +2,18 @@ class LikesController < ApplicationController
     
     def save_like
         @like = Like.new(post_id: params[:post_id], account_id: current_account.id)
-        #Use AJAX for this: 
-        #respond_to do |format|
-        #   format.json { 
-        #       unless @like.save
-        #           { success: false }
-        #       end
-        #           { success: true }
-        #    }
-        if @like.save
-            redirect_to dashboard_path
-        else
-            redirect_to new_post_path
-        end
+        @post_id = params[:post_id]
+       # Using AJAX with jquery here: 
+        respond_to do |format|
+          # Needs to be returned as JS since we are rendering a view  
+          format.js { 
+            unless @like.save
+                @success = false
+            end
+            @success = true
+            render 'posts/like'
+        }
     end
+    end
+
 end

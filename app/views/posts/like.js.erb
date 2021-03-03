@@ -1,0 +1,4 @@
+// A partial for JS that highlights the like icon when it has been clicked by adding
+// an 'active' class dynamically
+// Passing in post id from controller as a way to select the like
+$(".like-<%= @post_id %>").addClass("active");
