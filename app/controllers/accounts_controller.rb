@@ -4,6 +4,8 @@ class AccountsController < ApplicationController
     def index
         # user dashboard - feed
         @posts = Post.active
+        # Using where not so user's own ID is not returned here
+        @follower_suggestions = Account.where.not(id: current_account.id)
     end
 
     def show

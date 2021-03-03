@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :accounts, controllers: { omniauth_callbacks: 'accounts/omniauth_callbacks', sessions: 'sessions' }
   
   resources :accounts, only: [:show]
-  resources :posts, only: [:new, :create, :show] do
+  resources :posts do
     resources :likes
   end
   

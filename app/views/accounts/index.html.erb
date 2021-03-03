@@ -18,9 +18,13 @@
           <!--- Using post id here is a nice quick way to select the post since we are on a feed  --->
           <i class="fa fa-heart like-<%= post.id %> <%= 'active' if post_liked_by_user?(post.id) %> fa-2x post-like "data-id="<%= post.id %>"></i>
           <i class="fa fa-comment fa-2x post-comment"></i>
+          <% if current_account.id == post.account_id %>
+          <%= link_to 'edit post', edit_post_path(post.id) %>
+          <% end %>
         </div>
-          <p><strong><%= post.total_likes_count %> likes </strong></p>
-          <p><strong><%= post.account.username %></strong></p>
+          <!-- Setting ID here to use as unique identifier for selecting the likes number in JS partial -->
+          <p><strong id="post-<%= post.id %>-likes"><%= post.total_likes_count %> likes </strong></p>
+          <p><strong id="post-<%= post.id %>-comments"><%= post.account.username %></strong></p>
 
           <%= simple_format post.description %>
 
@@ -39,6 +43,7 @@
       <div class="follower-suggestions">
         <%= link_to "View All", '#', class: "float-right" %>
         <p class="text-muted">Suggestions for you</p>
+        <%= render "accounts/follower_suggestions" %>
       </div>
     </div>
   </div>

@@ -6,3 +6,6 @@ $(".like-<%= @post_id %>").addClass("active");
 <% else %>
 $(".like-<%= @post_id %>").removeClass("active");
 <% end %>
+// Remember, dot to select class hash to select id
+// Passing in updated value of post likes here (must be outside conditional)
+$("#post-<%= @post_id %>-likes").text("<%= @post_likes %> likes");

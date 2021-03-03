@@ -17,6 +17,8 @@ class LikesController < ApplicationController
           @success = false
         end
       
+        # Get value from post itself when clicked
+        @post_likes = Post.find(@post_id).total_likes_count
         render 'posts/like'
       }
     end

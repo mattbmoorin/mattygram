@@ -4,4 +4,7 @@ module PostsHelper
     Like.where(post_id: post_id, account_id: current_account.id).any?
   end
 
+  def can_edit_post? account_id
+    @posts.id == account_id
+  end
 end
