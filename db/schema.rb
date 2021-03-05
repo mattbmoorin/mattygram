@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 2021_03_03_191901) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "posts_id"
-    t.bigint "accounts_id"
+    t.bigint "post_id"
+    t.bigint "account_id"
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["accounts_id"], name: "index_comments_on_accounts_id"
-    t.index ["posts_id"], name: "index_comments_on_posts_id"
+    t.index ["account_id"], name: "index_comments_on_account_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "likes", force: :cascade do |t|

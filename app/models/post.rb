@@ -10,6 +10,11 @@ class Post < ApplicationRecord
     
   scope :active, -> { where active: true }
 
+  def self.longest_description
+    a = Post.where.not(description: nil)
+    a.sort_by {|x| x.description.length}.last
+  end
+
   private 
 
   def set_active

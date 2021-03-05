@@ -1,0 +1,7 @@
+<!-- Relationship was set up in model so this is why posts.comments works here... -->
+<% post.comments.each do |comment|  %>
+<div class="comment">
+  <strong><%= comment.account.username %></strong>
+  <%= comment.comment %>
+</div>
+<% end %>
