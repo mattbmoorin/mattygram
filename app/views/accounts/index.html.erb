@@ -9,9 +9,9 @@
           <% end %>
           <%= post.account.username %>
         </div>
-
+        <% if post.image.url %>
         <%= image_tag post.image.url, class: "img img-fluid" %>
-
+        <% end %>
 
         <div class="post-details">
           <div class="post-actions">

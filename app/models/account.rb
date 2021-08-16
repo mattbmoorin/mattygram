@@ -32,7 +32,7 @@ class Account < ApplicationRecord
       account.username = provider_data.info.first_name
       account.email = provider_data.info.email
       account.password = Devise.friendly_token[0, 20]
-      user.skip_confirmation!
+      # user.skip_confirmation!
     end
   end 
 

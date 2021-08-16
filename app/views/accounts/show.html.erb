@@ -21,7 +21,9 @@
         <% current_account.posts.each do |post| %>
             <div class="col-4">
                 <div class="insta-post">
+                 <% if post.image.url %>
                   <%= image_tag post.image.url, class: "img img-fluid" %>
+                 <% end %>
                 </div>
             </div>
         <% end %>
